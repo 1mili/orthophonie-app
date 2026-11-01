@@ -1,0 +1,164 @@
+@import "tailwindcss";
+@import "@fontsource/fraunces/400.css";
+@import "@fontsource/fraunces/500.css";
+@import "@fontsource/fraunces/600.css";
+@import "@fontsource/fraunces/600-italic.css";
+@import "@fontsource/plus-jakarta-sans/400.css";
+@import "@fontsource/plus-jakarta-sans/500.css";
+@import "@fontsource/plus-jakarta-sans/600.css";
+@import "@fontsource/plus-jakarta-sans/700.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+
+:root {
+  /* Charte Graphique Douce & Pastel "Lisen Wa Kalem" */
+  --ink: #2d3748;            /* texte gris anthracite doux et lisible */
+  --ink-soft: #64748b;
+  --paper: #fbfdfa;          /* fond global ultra doux et lumineux */
+  --paper-warm: #f4faf2;     /* fond carte secondaire */
+  
+  /* Vert Menthe Doux (Mint Green) */
+  --mint: #d4ebd0;
+  --mint-light: #e8f5e5;
+  --mint-soft: #f2f9f0;
+  --mint-dark: #2d6a4f;
+  
+  /* Saumon / Pêche Pastel */
+  --peach: #f8a98c;
+  --peach-light: #fcd5ce;
+  --peach-soft: #fff3f0;
+  --peach-dark: #e0684b;
+  --coral: #f8a98c;          /* mappé pour la cohérence des boutons CTA */
+  --coral-soft: #fcd5ce;
+
+  /* Bleu Ciel Très Clair */
+  --sky-soft: #e0f2fe;
+  --sky-light: #f0f9ff;
+  --sky-dark: #0284c7;
+
+  /* Jaune Soleil Pastel */
+  --sun-yellow: #fef08a;
+  --sun-light: #fef9c3;
+  --sun-dark: #ca8a04;
+
+  --marigold: #f8a98c;
+  --marigold-soft: #fcd5ce;
+  --sage: #2d6a4f;
+  --sage-deep: #1b4332;
+  --sage-soft: #e8f5e5;
+  --line: #e2ede0;           /* bordures douces teintées menthe */
+  --font-arabic: "Noto Sans Arabic", "Geeza Pro", "Amiri", "Segoe UI", Tahoma, Arial, sans-serif;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-paper-warm: var(--paper-warm);
+  --color-mint: var(--mint);
+  --color-mint-light: var(--mint-light);
+  --color-mint-soft: var(--mint-soft);
+  --color-mint-dark: var(--mint-dark);
+  --color-peach: var(--peach);
+  --color-peach-light: var(--peach-light);
+  --color-peach-soft: var(--peach-soft);
+  --color-peach-dark: var(--peach-dark);
+  --color-coral: var(--coral);
+  --color-coral-soft: var(--coral-soft);
+  --color-sky-soft: var(--sky-soft);
+  --color-sky-light: var(--sky-light);
+  --color-sun-yellow: var(--sun-yellow);
+  --color-sun-light: var(--sun-light);
+  --color-marigold: var(--marigold);
+  --color-marigold-soft: var(--marigold-soft);
+  --color-sage: var(--sage);
+  --color-sage-deep: var(--sage-deep);
+  --color-sage-soft: var(--sage-soft);
+  --color-line: var(--line);
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+html[dir="rtl"] body {
+  font-family: var(--font-arabic), "Plus Jakarta Sans", "Segoe UI", Tahoma, sans-serif;
+}
+
+html[dir="rtl"] .font-display {
+  font-family: var(--font-arabic), "Fraunces", "Times New Roman", serif;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.waveform-divider {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.waveform-divider path {
+  stroke: var(--coral);
+}
+
+@keyframes wave-breathe {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.35); }
+}
+
+@keyframes cute-float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(1.5deg); }
+}
+
+@keyframes cute-bounce-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes cute-wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+
+.animate-float {
+  animation: cute-float 4s ease-in-out infinite;
+}
+
+.animate-bounce-soft {
+  animation: cute-bounce-soft 2.5s ease-in-out infinite;
+}
+
+.animate-wiggle {
+  animation: cute-wiggle 3s ease-in-out infinite;
+}
+
+.wave-bar {
+  animation: wave-breathe 1.6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+:focus-visible {
+  outline: 2px solid var(--coral);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wave-bar {
+    animation: none;
+  }
+}
