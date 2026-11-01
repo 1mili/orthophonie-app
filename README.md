@@ -14,7 +14,7 @@
 ---
 
 ## 🌟 Overview
-An advanced graduation project (PFE) designed to bridge the gap between parents and speech therapists. The platform streamlines clinical workflows, offers interactive remote sessions, and provides dedicated dashboards tailored for each user role.
+An advanced graduation project (PFA) designed to bridge the gap between parents and speech therapists. The platform streamlines clinical workflows, offers interactive remote sessions, and provides dedicated dashboards tailored for each user role.
 
 ## 🚀 Key Features
 * 🩺 **Teleconsultation:** Real-time video communication capabilities using WebRTC.
